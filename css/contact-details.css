@@ -1,0 +1,89 @@
+.contact-details-hero { min-height: 430px; }
+.contact-people { display: grid; justify-items: center; gap: 24px; }
+.contact-details-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
+  min-width: 0;
+  max-width: 860px;
+  padding: 36px;
+  border: 1px solid rgb(36 92 73 / 12%);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 16px 44px rgb(29 41 37 / 7%);
+}
+.contact-details-card-owner { grid-template-columns: minmax(0, 1fr) 190px; }
+.contact-details-save {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 22px 16px;
+  border: 1px solid rgb(36 92 73 / 12%);
+  border-radius: 16px;
+  background: #f7f7f1;
+  color: #245c49;
+  font-size: .9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.contact-details-save:hover { background: #e8eddf; }
+.contact-save-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 50%;
+  background: #d3eb9b;
+  color: #1d2925;
+  font-size: 1.8rem;
+}
+.contact-details-card h2 { margin-bottom: 20px; font-size: clamp(2rem, 5vw, 3rem); }
+.contact-details-profile { display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
+.contact-details-profile .eyebrow { margin-bottom: 8px; }
+.contact-details-profile h2 { margin-bottom: 0; }
+.contact-person-photo {
+  display: block;
+  width: 120px;
+  height: 150px;
+  flex: 0 0 auto;
+  border: 1px solid rgb(36 92 73 / 14%);
+  border-radius: 14px;
+  object-fit: cover;
+}
+.contact-details-list { display: grid; gap: 15px; margin: 0 0 24px; }
+.contact-details-list > div { display: grid; grid-template-columns: 90px minmax(0, 1fr); gap: 10px; }
+.contact-details-list dt { color: #68746e; font-size: .82rem; font-weight: 700; }
+.contact-details-list dd { margin: 0; overflow-wrap: anywhere; font-weight: 700; }
+.contact-details-list a { color: #245c49; }
+.contact-details-list a:hover { text-decoration: underline; }
+.vcard-download { gap: 9px; }
+.contact-details-qr {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  color: #245c49;
+  font-size: .9rem;
+  font-weight: 700;
+  text-align: center;
+}
+.contact-details-qr img {
+  display: block;
+  width: min(220px, 42vw);
+  height: auto;
+  padding: 8px;
+  border: 1px solid rgb(36 92 73 / 14%);
+  border-radius: 12px;
+  background: #fff;
+  image-rendering: pixelated;
+}
+@media (max-width: 700px) {
+  .contact-details-card { grid-template-columns: minmax(0, 1fr); gap: 30px; padding: 24px; }
+  .contact-details-qr { grid-row: 1; }
+  .contact-details-qr img { width: 180px; }
+  .contact-details-profile { gap: 14px; }
+  .contact-details-profile > div { min-width: 0; }
+  .contact-details-profile h2 { font-size: clamp(1.4rem, 7vw, 1.8rem); overflow-wrap: anywhere; }
+  .contact-person-photo { width: 84px; height: 110px; }
+}

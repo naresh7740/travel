@@ -1,0 +1,225 @@
+.travel-map-section {
+  position: relative;
+  padding: 82px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 92% 8%, rgb(211 235 155 / 25%), transparent 34%),
+    linear-gradient(135deg, #f8f8f2 0%, #eef3e9 100%);
+}
+.travel-map-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 64px);
+}
+.travel-map-copy {
+  max-width: 500px;
+  padding: clamp(24px, 3.2vw, 38px);
+  border: 1px solid rgb(36 92 73 / 10%);
+  border-radius: 24px;
+  background: rgb(255 255 255 / 90%);
+  box-shadow: 0 18px 48px rgb(29 41 37 / 7%);
+}
+.travel-map-copy .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  border: 1px solid rgb(36 92 73 / 10%);
+  border-radius: 999px;
+  background: #f1f5e9;
+  color: #245c49;
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.travel-map-copy .eyebrow::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #80a94c;
+  box-shadow: 0 0 0 4px rgb(128 169 76 / 14%);
+  content: "";
+}
+.travel-map-copy h2 {
+  margin-bottom: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.05;
+}
+.travel-map-copy > p:not(.eyebrow) {
+  margin: 0 0 20px;
+  color: #68746e;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.travel-map-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #245c49;
+  font-weight: 700;
+  text-decoration: none;
+}
+.travel-map-copy .text-link:hover { text-decoration: underline; }
+.business-details {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+  padding: 17px 18px;
+  border: 1px solid rgb(36 92 73 / 10%);
+  border-radius: 16px;
+  background: #f5f7ef;
+}
+.business-details p { display: grid; gap: 2px; margin: 0; }
+.business-details p > span { color: #68746e; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.business-details strong, .business-details a { color: #1d2925; font-size: .92rem; font-weight: 700; }
+.business-details a:hover { color: #245c49; text-decoration: underline; }
+.location-qr {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgb(36 92 73 / 11%);
+  border-radius: 16px;
+  background: #fff;
+  color: #245c49;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.location-qr img {
+  display: block;
+  width: min(120px, 100%);
+  height: auto;
+  padding: 4px;
+  border: 1px solid rgb(36 92 73 / 10%);
+  border-radius: 12px;
+  background: #fff;
+  image-rendering: pixelated;
+}
+.location-qr:hover {
+  transform: translateY(-3px);
+  border-color: rgb(36 92 73 / 25%);
+  box-shadow: 0 12px 24px rgb(29 41 37 / 8%);
+}
+.location-qr:focus-visible,
+.travel-map-copy .text-link:focus-visible {
+  outline: 3px solid #80a94c;
+  outline-offset: 3px;
+}
+.location-qr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 4px 0 18px;
+}
+.location-qr-grid .contact-qr img { width: min(120px, 100%); }
+.travel-map-layout > .about-quick-links {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+}
+.travel-map {
+  position: relative;
+  min-height: 410px;
+  overflow: hidden;
+  border: 1px solid rgb(36 92 73 / 12%);
+  border-radius: 28px;
+  background-color: #eaf0e5;
+  background-image:
+    radial-gradient(rgb(36 92 73 / 15%) 1px, transparent 1px),
+    linear-gradient(145deg, #f2f5e8, #e1ecdc);
+  background-position: center;
+  background-size: 19px 19px, cover;
+  box-shadow: 0 22px 50px rgb(29 41 37 / 9%);
+}
+.map-caption {
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  padding: 8px 12px;
+  border: 1px solid rgb(36 92 73 / 10%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 88%);
+  color: #68746e;
+  font-size: .68rem;
+  letter-spacing: .04em;
+  backdrop-filter: blur(8px);
+}
+.travel-map-art { position: absolute; inset: 12px 0 26px; width: 100%; height: calc(100% - 38px); }
+.map-land { fill: rgb(211 235 155 / 38%); stroke: rgb(36 92 73 / 24%); stroke-width: 2; }
+.map-road { fill: none; stroke: rgb(36 92 73 / 24%); stroke-width: 4; stroke-linecap: round; }
+.map-route {
+  fill: none;
+  stroke: #245c49;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 9 10;
+  animation: map-route-flow 2.2s linear infinite;
+}
+.map-stop { fill: #245c49; stroke: #fff; stroke-width: 3; }
+.map-pin { fill: #d3eb9b; stroke: #1d2925; stroke-width: 3; }
+.map-pulse {
+  fill: none;
+  stroke: #245c49;
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: map-pin-pulse 1.8s ease-out infinite;
+}
+.map-label {
+  fill: #1d2925;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+.map-label-start { fill: #245c49; }
+.map-location-tag {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid rgb(36 92 73 / 13%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 90%);
+  color: #245c49;
+  font-size: .75rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgb(29 41 37 / 8%);
+}
+.map-location-tag > span { font-size: 1rem; }
+@keyframes map-route-flow {
+  to { stroke-dashoffset: -38; }
+}
+@keyframes map-pin-pulse {
+  0% { opacity: .8; transform: scale(.55); }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+@media (max-width: 700px) {
+  .travel-map-section { padding: 60px 0; }
+  .travel-map-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .travel-map-copy { max-width: none; padding: 24px; border-radius: 20px; }
+  .travel-map { min-height: 300px; border-radius: 22px; }
+  .travel-map-layout > .about-quick-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .travel-map-art { inset: 8px 0 22px; height: calc(100% - 30px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-route, .map-pulse { animation: none; }
+  .location-qr { transition: none; }
+}
