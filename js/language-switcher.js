@@ -258,6 +258,129 @@ const destinationText = {
   cherrapunji: ["मेघालय", "झरने, गुफाएँ और मानसून के शानदार नज़ारे।"]
 };
 
+const genericHindiText = {
+  "Gallery": "गैलरी",
+  "About": "हमारे बारे में",
+  "About us": "हमारे बारे में",
+  "Call us": "कॉल करें",
+  "Call": "कॉल करें",
+  "Call Naresh": "नरेश को कॉल करें",
+  "Call 96023 61436": "कॉल करें 96023 61436",
+  "Call 82393 96673": "कॉल करें 82393 96673",
+  "Call 77408 22894": "कॉल करें 77408 22894",
+  "Plan your trip": "यात्रा प्लान करें",
+  "Plan a trip": "यात्रा की योजना बनाएँ",
+  "Online booking": "ऑनलाइन बुकिंग",
+  "Book / enquire": "बुकिंग / पूछताछ",
+  "Book or enquire": "बुकिंग / पूछताछ",
+  "Enquire on WhatsApp": "WhatsApp पर पूछताछ",
+  "WhatsApp 96023 61436": "WhatsApp पर 96023 61436",
+  "WhatsApp 82393 96673": "WhatsApp पर 82393 96673",
+  "Main navigation": "मुख्य नेविगेशन",
+  "Open navigation menu": "नेविगेशन मेनू खोलें",
+  "Close navigation menu": "नेविगेशन मेनू बंद करें",
+  "← Back to homepage": "← मुख्य पृष्ठ पर वापस जाएँ",
+  "← All destinations": "← सभी जगहें",
+  "← Back to About": "← हमारे बारे में वापस जाएँ",
+  "Vehicle Gallery": "वाहन गैलरी",
+  "The right ride for every journey.": "हर यात्रा के लिए सही वाहन।",
+  "From quick city trips to family road journeys, find a vehicle option that fits your plans.": "शहर की छोटी यात्राओं से लेकर परिवार की सड़क यात्राओं तक, अपनी योजना के अनुसार वाहन चुनें।",
+  "Explore vehicles": "वाहन देखें",
+  "Choose your vehicle": "अपना वाहन चुनें",
+  "Make the journey yours.": "अपनी यात्रा को अपनी पसंद का बनाएँ।",
+  "Browse the vehicle options below. Photos are representative; ask us about the model and availability for your trip.": "नीचे वाहन विकल्प देखें। तस्वीरें प्रतिनिधित्व करती हैं; अपनी यात्रा के लिए मॉडल और उपलब्धता पूछें।",
+  "Comfortable rides": "आरामदायक वाहन",
+  "Travel together": "साथ में यात्रा",
+  "More room": "अधिक जगह",
+  "Spacious family travel": "परिवार के लिए आरामदायक यात्रा",
+  "Comfortable journeys": "सुखद यात्रा",
+  "Need help choosing?": "चुनने में मदद चाहिए?",
+  "Tell us about your trip.": "अपनी यात्रा के बारे में बताएँ।",
+  "Share your route and travel date, and we’ll help you check suitable vehicle options.": "अपना रास्ता और यात्रा की तारीख बताएँ; हम उपयुक्त वाहन चुनने में मदद करेंगे।",
+  "All Types": "सभी प्रकार",
+  "vehicle options": "वाहन विकल्प",
+  "Barmer": "बाड़मेर",
+  "local travel support": "स्थानीय यात्रा सहायता",
+  "WhatsApp": "WhatsApp",
+  "easy booking enquiry": "आसान बुकिंग पूछताछ",
+  "Travel service highlights": "यात्रा सेवाओं की खास बातें",
+  "Contact Details": "संपर्क विवरण",
+  "Travel contacts": "यात्रा संपर्क",
+  "Save a contact or get in touch to discuss your travel plans.": "यात्रा की योजना पर चर्चा करने के लिए संपर्क सेव करें या बात करें।",
+  "Phone": "फोन",
+  "Address": "पता",
+  "Email": "ईमेल",
+  "Save contact": "संपर्क सेव करें",
+  "Save Jagdish's contact": "जगदीश का संपर्क सेव करें",
+  "Save Kisan's contact": "किसान का संपर्क सेव करें",
+  "Scan to save contact": "स्कैन करके संपर्क सेव करें",
+  "Barmer, Rajasthan": "बाड़मेर, राजस्थान",
+  "Jagdish Kumar": "जगदीश कुमार",
+  "Kisan Choudhary": "किसान चौधरी",
+  "Naresh Choudhary": "नरेश चौधरी",
+  "Booking & enquiry": "बुकिंग और पूछताछ",
+  "Plan a Kashmir trip": "कश्मीर यात्रा की योजना बनाएँ",
+  "Plan your Kashmir trip.": "अपनी कश्मीर यात्रा की योजना बनाएँ।",
+  "Send a message or call us to discuss dates and packages.": "तारीखें और पैकेज पर चर्चा करने के लिए संदेश भेजें या कॉल करें.",
+  "A closer look": "आगे जानें",
+  "Places to explore": "देखने की जगहें",
+  "When to go": "कब जाएँ",
+  "Good to know": "जानने योग्य बातें"
+};
+
+function applyGenericHindiTranslations() {
+  if (!window.__hindiOriginalTextNodes) {
+    window.__hindiOriginalTextNodes = new WeakMap();
+  }
+
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (node.parentElement.closest("[data-i18n], script, style, option")) continue;
+    if (!window.__hindiOriginalTextNodes.has(node)) {
+      window.__hindiOriginalTextNodes.set(node, node.textContent);
+    }
+    const original = window.__hindiOriginalTextNodes.get(node).trim();
+    if (genericHindiText[original]) {
+      const leading = /^\s/.test(window.__hindiOriginalTextNodes.get(node)) ? " " : "";
+      const trailing = /\s$/.test(window.__hindiOriginalTextNodes.get(node)) ? " " : "";
+      node.textContent = `${leading}${genericHindiText[original]}${trailing}`;
+    }
+  }
+}
+
+function restoreGenericEnglishTranslations() {
+  if (!window.__hindiOriginalTextNodes) return;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (window.__hindiOriginalTextNodes.has(node)) {
+      node.textContent = window.__hindiOriginalTextNodes.get(node);
+    }
+  }
+}
+
+function ensureLanguageSwitcher() {
+  if (document.querySelector(".language-select")) return;
+  const navActions = document.querySelector(".nav-actions");
+  if (!navActions) return;
+
+  const label = document.createElement("label");
+  label.className = "language-switcher";
+  const hidden = document.createElement("span");
+  hidden.className = "visually-hidden";
+  hidden.textContent = "Language";
+  const select = document.createElement("select");
+  select.className = "language-select";
+  select.setAttribute("aria-label", "Select language");
+  select.innerHTML = '<option value="en">English</option><option value="hi">हिन्दी</option>';
+  label.append(hidden, select);
+
+  const cta = navActions.querySelector(".nav-cta");
+  if (cta) navActions.insertBefore(label, cta);
+  else navActions.insertBefore(label, navActions.querySelector(".nav-toggle") || null);
+}
+
 function setElementText(element, value) {
   const textNode = Array.from(element.childNodes).find(
     (node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim()
@@ -273,6 +396,12 @@ function setElementText(element, value) {
 function renderLanguage(language) {
   const translations = languageText[language] || languageText.en;
   document.documentElement.lang = language;
+
+  if (language === "hi") {
+    applyGenericHindiTranslations();
+  } else {
+    restoreGenericEnglishTranslations();
+  }
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const translation = translations[element.dataset.i18n];
@@ -305,18 +434,18 @@ function renderLanguage(language) {
     if (!card.dataset.originalLabel) card.dataset.originalLabel = label.textContent;
     if (!card.dataset.originalDescription) card.dataset.originalDescription = description.textContent;
     if (!card.dataset.originalAriaLabel) card.dataset.originalAriaLabel = card.getAttribute("aria-label");
-    if (!image.dataset.originalAlt) image.dataset.originalAlt = image.alt;
+    if (image && !image.dataset.originalAlt) image.dataset.originalAlt = image.alt;
 
     if (language === "hi" && translatedCard) {
       label.textContent = translatedCard[0];
       description.textContent = translatedCard[1];
       card.setAttribute("aria-label", `घूमें: ${title}`);
-      image.alt = `${title} का दृश्य`;
+      if (image) image.alt = `${title} का दृश्य`;
     } else {
       label.textContent = card.dataset.originalLabel;
       description.textContent = card.dataset.originalDescription;
       card.setAttribute("aria-label", card.dataset.originalAriaLabel);
-      image.alt = image.dataset.originalAlt;
+      if (image) image.alt = image.dataset.originalAlt;
     }
   });
 
@@ -334,8 +463,9 @@ function renderLanguage(language) {
 }
 
 function updateLanguageLinks(language) {
-  document.querySelectorAll('a[href*="index.html"], a[href*="about.html"]').forEach((link) => {
+  document.querySelectorAll("a[href]").forEach((link) => {
     const originalHref = link.getAttribute("href");
+    if (!originalHref || /^(?:https?:|tel:|mailto:|javascript:)/.test(originalHref)) return;
     const url = new URL(originalHref, window.location.href);
     if (url.origin !== window.location.origin) return;
     if (language === "hi") url.searchParams.set("lang", "hi");
@@ -350,13 +480,30 @@ window.applyLanguage = () => {
   renderLanguage(select ? select.value : document.documentElement.lang);
 };
 
-const initialLanguage = new URLSearchParams(window.location.search).get("lang") === "hi" ? "hi" : "en";
+ensureLanguageSwitcher();
+
+const urlLanguage = new URLSearchParams(window.location.search).get("lang");
+const savedLanguage = (() => {
+  try {
+    return window.localStorage.getItem("preferredLanguage");
+  } catch (error) {
+    return null;
+  }
+})();
+const initialLanguage = urlLanguage === "hi" || urlLanguage === "en"
+  ? urlLanguage
+  : (savedLanguage === "hi" ? "hi" : "en");
 renderLanguage(initialLanguage);
 
 document.querySelectorAll(".language-select").forEach((select) => {
   select.addEventListener("change", () => {
     const language = select.value === "hi" ? "hi" : "en";
     renderLanguage(language);
+    try {
+      window.localStorage.setItem("preferredLanguage", language);
+    } catch (error) {
+      console.warn("Could not remember the selected language.", error);
+    }
     try {
       const currentUrl = new URL(window.location.href);
       if (language === "hi") currentUrl.searchParams.set("lang", "hi");

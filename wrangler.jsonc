@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jagdish-tour-travels",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-20",
+  "workers_dev": true,
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/*"]
+  }
+}
