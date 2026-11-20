@@ -68,9 +68,9 @@ function sitemapResponse(origin) {
   });
 }
 
-function robotsResponse(origin) {
+function robotsResponse() {
   return new Response(
-    `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`,
+    "User-agent: *\nAllow: /\n\nSitemap: https://jagdish-tour-and-travels.pages.dev/sitemap.xml\n",
     {
       headers: {
         "content-type": "text/plain; charset=utf-8",
@@ -110,7 +110,7 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/robots.txt") {
-      return robotsResponse(url.origin);
+      return robotsResponse();
     }
     if (url.pathname === "/sitemap.xml") {
       return sitemapResponse(url.origin);
